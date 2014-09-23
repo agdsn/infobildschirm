@@ -1,0 +1,18 @@
+import requests;
+import json;
+
+def get_times(stopname):
+    """
+    Parses the VVO-Online API return string.
+
+    :param stopname: Requested stop (e. g. "Wasaplatz")
+    :returns: An array containing dictionaries with departure data: [{"line": "11", "direction": "Zschertnitz", "time": 4}]
+        The array is presorted (ascending with remaining time).
+    """
+    try:
+        data_raw = requests.get("http://widgets.vvo-online.de/abfahrtsmonitor/Abfahrten.do",
+                        params={'ort': 'Dresden', 'hst': stopname}).text;
+        data_json = json.loads('{"data": ' + data_raw + '}')["data"];
+        return map(lambda d: {"line": d[0], "direction": d[1], "time": int(d[2]) if d[2].isdigit() else 0}, data_json);
+    except:
+        return []

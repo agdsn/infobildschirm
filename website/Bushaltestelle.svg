@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" id="svg3855" viewBox="0 0 232.25 232.25" version="1.1">
+ <g id="layer1" fill-rule="evenodd" transform="translate(-399.02 -58.012)">
+  <path id="path4388" style="color:#000000" d="m625.28 171.51c0 61.926-50.201 112.13-112.13 112.13-61.926 0-112.13-50.201-112.13-112.13 0-61.926 50.201-112.13 112.13-112.13 61.926 0 112.13 50.201 112.13 112.13z" transform="translate(1.9936 2.6293)" stroke="#e8be23" stroke-width="8" fill="#257257"/>
+  <path id="path4390" style="color:#000000" d="m515.16 96.812c-42.707 0-77.344 34.606-77.344 77.312 0 42.707 34.637 77.344 77.344 77.344s77.312-34.637 77.312-77.344-34.606-77.312-77.312-77.312zm-43.75 26.406h22.094v40.094h43.312v-40.094h22.094v101.84h-22.094v-44.531h-43.312v44.531h-22.094v-101.84z" fill="#e8be20"/>
+ </g>
+ <metadata>
+  <rdf:RDF>
+   <cc:Work>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <cc:license rdf:resource="http://creativecommons.org/licenses/publicdomain/"/>
+    <dc:publisher>
+     <cc:Agent rdf:about="http://openclipart.org/">
+      <dc:title>Openclipart</dc:title>
+     </cc:Agent>
+    </dc:publisher>
+   </cc:Work>
+   <cc:License rdf:about="http://creativecommons.org/licenses/publicdomain/">
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Reproduction"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#Distribution"/>
+    <cc:permits rdf:resource="http://creativecommons.org/ns#DerivativeWorks"/>
+   </cc:License>
+  </rdf:RDF>
+ </metadata>
+</svg>

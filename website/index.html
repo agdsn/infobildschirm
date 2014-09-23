@@ -1,0 +1,105 @@
+<!--
+	----------------------------------------------------------------------------
+	"THE BEER-WARE LICENSE" (Revision 42):
+	<timklge@wh2.tu-dresden.de> wrote this file. As long as you retain this notice you
+	can do whatever you want with this stuff. If we meet some day, and you think
+	this stuff is worth it, you can buy me a beer in return - Tim Kluge
+	---------------------------------------------------------------------------
+
+	AGDSN Screen client. Optimized for 4:3 displays.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>AGDSN</title>
+		
+		<link href='css/style.css' rel='stylesheet' />
+		
+		<script src='scripts/jquery.js'></script>
+		<script src='scripts/jquery.xml.js'></script>
+		<script src='scripts/jquery.color.js'></script>
+		<script src='scripts/jquery.easing.js'></script>
+		<script src='scripts/jquery.animate-enhanced.js'></script>
+		<script src='scripts/Chart.js'></script>
+		<script src="scripts/renderslave.js"/></script>
+	</head>
+	<body class='impress-not-supported'>
+		<div class="logo"><img id="logo" src="agdsn_logo_small.png" width="300"/></div>
+		<div class="logo"><img id="logo_black" src="agdsn_logo_small_black.png" width="300"/></div>
+		
+		<div id="clock"></div>
+		<div id="ajaxfail">Laden von Daten fehlgeschlagen. Internetz pr&uuml;fen.</div>
+		
+		<div id="buscontent">
+			<div id="bus_header" style="padding: 0px; margin: 0px; width: 100%; height: 150px; top: 0px; left: 0px; position: absolute; background-color: #ffcc01; z-index: -1100;">
+				<img id="bus_h_1" src="Bushaltestelle.svg" style="padding: 0px; margin: 0px; height: 50px; left: 20px; top: 50px; position: absolute;"></img>
+				<div id="bus_title_zw" style="position: absolute; left: 80px; top: 50px; font-size: 50px; color: black; font-weight: bold;">Zellescher Weg</div>
+				
+				<img id="bus_h_2" src="Bushaltestelle.svg" style="padding: 0px; margin: 0px; height: 50px; left: 600px; top: 50px; position: absolute;"></img>
+				<div id="bus_title_wp" style="position: absolute; left: 660px; top: 50px; font-size: 50px; color: black; font-weight: bold;">Wasaplatz</div>
+			</div>
+			<div id="bus_trennbalken" style="position: absolute; left: 0px; top: 150px; background-color: black; width: 100%; height: 50px; color: white; font-weight: bold; padding-top: 5px; font-size: 30px;">
+				<div id="bus_linienlabel_1" style="position: absolute; left: 25px;">Linie</div>
+				<div id="bus_richtungslabel_1" style="position: absolute; left: 120px;">Richtung</div>
+				<div id="bus_inlabel_1" style="position: absolute; left: 500px;">in min</div>
+				
+				<div id="bus_linienlabel_1" style="position: absolute; left: 610px;">Linie</div>
+				<div id="bus_richtungslabel_1" style="position: absolute; left: 730px;">Richtung</div>
+				<div id="bus_inlabel_1" style="position: absolute; left: 1110px;">in min</div>
+				
+				<div id="bus_trennstrich" style="position: absolute; left: 595px; width: 5px; height: 1000px; background-color: black;"></div>
+			</div>
+			<div id="bus_table" style="position: absolute; left: 0px; top: 200px; width: 100%; background-color: none; color: orange; padding-top: 20px; font-size: 35px;">
+				<div style="position: absolute; left: 50px;">11</div>
+				<div style="position: absolute; left: 170px;">Zschertnitz</div>
+			</div>
+		</div>
+		
+		<div id='impress'>
+			<header id="intro" class="step" data-scale="2">
+				<h1>AGDSN</h1>
+				<p>Sektionsb&uuml;ro Wundtstrasse</p>
+				<p>&nbsp;</p>
+				<span id="sprechstundenlabel">Sprechstunde: Montags und Donnerstags, 19 - 20 Uhr<br />
+				Consulting hour: Monday and Thursday, 7 pm - 8 pm</span>
+			</header>
+			
+			<section id="traffic" class="step" data-x="2200" style="height: 900px;">
+				<div class="circlecontainer" id="N_Wu3"><div class="circle" id="N_Wu3_K"></div><div class="circlecaption" id="N_Wu3_C">Wu3</div></div>
+				<div class="circlecontainer" id="N_Wu11"><div class="circle" id="N_Wu11_K"></div><div class="circlecaption" id="N_Wu11_C">Wu11</div></div>
+				<div class="circlecontainer" id="N_Wu5"><div class="circle" id="N_Wu5_K"></div><div class="circlecaption" id="N_Wu5_C">Wu5</div></div>
+				<div class="circlecontainer" id="N_Wu1"><div class="circle" id="N_Wu1_K"></div><div class="circlecaption" id="N_Wu1_C">Wu1</div></div>
+				<div class="circlecontainer" id="N_Wu7"><div class="circle" id="N_Wu7_K"></div><div class="circlecaption" id="N_Wu7_C">Wu7</div></div>
+				<div class="circlecontainer" id="N_Wu9"><div class="circle" id="N_Wu9_K"></div><div class="circlecaption" id="N_Wu9_C">Wu9</div></div>
+				<div class="circlecontainer" id="N_ZW"><div class="circle" id="N_ZW_K"></div><div class="circlecaption" id="N_ZW_C">ZW</div></div>
+				<div class="cloud" id="N_INTERNETZ"><div class="child">Internetz<div class="traflabel" id="internetztraf"></div></div></div>
+			</section>
+			
+			<section id="news1" class="step newsarea" data-x="4200">
+			</section>
+		
+			<section id="news2" class="step newsarea" data-x="4200" data-y="1800">
+			</section>
+			
+			<section id="vvo" class="step" data-x="4200" data-y="3000">
+				<!-- See fixed div -->
+			</section>
+			
+			<section id="mensawu1" class="step" data-x="2000" data-y="3300" style="width: 1200px; height: 700px; font-size: 30px;">
+				<table border="0" style="width: 1200px;" cellspacing="0" id="mensawu1angebot">
+
+				</table>
+			</section>
+			
+			<footer id="userstat" class="step" data-y="2000" data-x="1500" data-rotate="90">
+				<h3>Nutzerstatistik</h3>
+				<div id="userstattabl"></div>
+				<div id="userstatgraph"><canvas id="userstatpie" width="500" height="700"></canvas></div>
+			</footer>
+		</div>
+		
+		<script src='scripts/impress.js'></script>
+		<script src='scripts/viewer.js'></script>
+	</body>
+</html>
